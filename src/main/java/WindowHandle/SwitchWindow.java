@@ -51,4 +51,32 @@ public class SwitchWindow {
         System.out.println(header.getText());
         Assert.assertTrue(BrowserUtils.getText(header).equals("New Window"));
     }
+
+    @Test
+    public void switchingWindowClose(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/");
+        WebElement multipleWindow=driver.findElement(By.linkText("Multiple Windows"));
+        multipleWindow.click();
+        WebElement clickhere=driver.findElement(By.xpath("//*[.='Click Here']"));
+        clickhere.click();
+        String mainId=driver.getWindowHandle();//I am expecting one id
+        BrowserUtils.switchByID(driver,mainId);
+//        Set<String> allPageIds=driver.getWindowHandles();
+//        for(String id:allPageIds){//123
+//            System.out.println(id);//I am expecting 2 ids but one of them will be my mainid
+//            if(!id.equals(mainId)){//123,345
+//                driver.switchTo().window(id);
+//            }
+//        }
+        System.out.println(driver.getWindowHandle());
+        WebElement header=driver.findElement(By.tagName("h3"));
+        System.out.println(header.getText());
+        Assert.assertTrue(BrowserUtils.getText(header).equals("New Window"));
+        driver.close();
+        driver.switchTo().window(mainId);
+        WebElement poweredByText=driver.findElement(By.xpath("//div[contains(text(),'Powered by ')]"));
+        System.out.println(poweredByText.getText().trim());
+    }
 }

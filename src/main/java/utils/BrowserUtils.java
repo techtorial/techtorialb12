@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Set;
+
 public class BrowserUtils {
     //Browser utils is a location for the reusable methods.
     //Advantage:1-You do not need to repeat yourself.
@@ -46,5 +48,23 @@ public class BrowserUtils {
     public static void scrollWithJS(WebDriver driver,WebElement element){
         JavascriptExecutor js= (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true)",element);
+    }
+
+    public static void switchByID(WebDriver driver,String mainId){
+        Set<String> allPageIds=driver.getWindowHandles();
+        for(String id:allPageIds){
+            if(!id.equals(mainId)){
+                driver.switchTo().window(id);
+            }
+        }
+    }
+    public static void switchByTitle(WebDriver driver,String title){
+        Set<String> allIds=driver.getWindowHandles();
+        for(String id:allIds){
+            driver.switchTo().window(id);
+            if(driver.getTitle().contains(title)){
+                break;
+            }
+        }
     }
 }
