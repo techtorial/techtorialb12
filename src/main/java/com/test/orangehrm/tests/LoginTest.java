@@ -1,5 +1,6 @@
 package com.test.orangehrm.tests;
 
+import com.test.orangehrm.TestBase;
 import com.test.orangehrm.pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,16 +10,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest {
-    WebDriver driver;
-    @BeforeMethod//it will run before every test annotations
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login/");
-        System.out.println("I am running for BeforeMethod Annotation");
-    }
+public class LoginTest extends TestBase {
+//    WebDriver driver;
+//    @BeforeMethod//it will run before every test annotations
+//    public void setUp(){
+//        WebDriverManager.chromedriver().setup();
+//        driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login/");
+//        System.out.println("I am running for BeforeMethod Annotation");
+//    }
     @Test
     public void validatePositiveLoginTest() throws InterruptedException {
         LoginPage loginPage=new LoginPage(driver);

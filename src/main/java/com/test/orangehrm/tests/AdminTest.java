@@ -1,5 +1,6 @@
 package com.test.orangehrm.tests;
 
+import com.test.orangehrm.TestBase;
 import com.test.orangehrm.pages.AdminPage;
 import com.test.orangehrm.pages.LoginPage;
 import com.test.orangehrm.pages.MainPage;
@@ -10,15 +11,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AdminTest {
-    WebDriver driver;
-    @BeforeMethod//it will run before every test annotations
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login/");
-    }
+public class AdminTest extends TestBase {
+//    WebDriver driver;
+//    @BeforeMethod//it will run before every test annotations
+//    public void setUp(){
+//        WebDriverManager.chromedriver().setup();
+//        driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login/");
+//    }
     @Test
     public void validateUrlAndAddButton() throws InterruptedException {
          /*
@@ -36,9 +37,9 @@ public class AdminTest {
         mainPage.clickAdmin();
         AdminPage adminPage=new AdminPage(driver);
         adminPage.clickAddButton();
-        adminPage.sendEmployeeInformation("Admin","Alice Duval","ahmet36",
+        adminPage.sendEmployeeInformation("Admin","Alice Duval","ahmet39",
                 "Disabled","12345678","12345678");
-        Assert.assertTrue(adminPage.validationUserNameIsCreated("ahmet36"));
+        Assert.assertTrue(adminPage.validationUserNameIsCreated("ahmet39"));
 
 
 
