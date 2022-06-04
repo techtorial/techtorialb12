@@ -54,6 +54,7 @@ public class LoginTest {
         String expectedColor="rgba(221, 119, 0, 1)";
         Assert.assertEquals(actualColor,expectedColor);
     }
+
     @AfterMethod
     public void tearDown(){
         driver.close();
