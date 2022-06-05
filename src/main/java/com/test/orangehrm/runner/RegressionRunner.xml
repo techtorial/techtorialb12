@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestNG Regression Runner">
+
+    <test name="OrangeHrm Tests">
+        <classes>
+            <class name="com.test.orangehrm.tests.LoginTest"> </class>
+            <class name="com.test.orangehrm.tests.MainTest"> </class>
+            <class name="com.test.orangehrm.tests.AdminTest"> </class>
+            <class name="com.test.orangehrm.tests.PimTest"> </class>
+        </classes>
+    </test>
+
+    <test name="Select Class tests">
+        <classes>
+            <class name="SelectClass.MultiSelect"> </class>
+            <class name="SelectClass.SelectBasics"> </class>
+        </classes>
+
+    </test>
+
+
+
+</suite>

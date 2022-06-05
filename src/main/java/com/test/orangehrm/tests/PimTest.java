@@ -28,7 +28,7 @@ public class PimTest extends TestBase {
         mainPage.clickPim();
         PimPage pimPage=new PimPage(driver);
         pimPage.sendPi("Ahmet","Baldir","1991",
-                "/Users/techtorial/Desktop/usa.png","AhmetIT15",
+                "/Users/techtorial/Desktop/usa.png","AhmetIT349",
                 "12345678","12345678","Disabled");
         pimPage.sendPersonalDetails("Single","Turkish","2022-06-11");
         pimPage.validateAfterEdit("Single","Turkish","2022-06-11");
