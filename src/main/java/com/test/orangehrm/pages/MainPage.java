@@ -15,8 +15,14 @@ public class MainPage {
     @FindBy(id = "menu_admin_viewAdminModule")
     WebElement adminButton;
 
+    @FindBy(id = "menu_pim_viewPimModule")
+    WebElement pimButton;
+
     public void clickAdmin(){
         adminButton.click();
+    }
+    public void clickPim(){
+        pimButton.click();
     }
 
 }
