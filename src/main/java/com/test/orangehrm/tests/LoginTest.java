@@ -56,11 +56,6 @@ public class LoginTest extends TestBase {
         Assert.assertEquals(actualColor,expectedColor);
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.close();
-        //System.out.println("this is running for after method annotation");
-    }
 
 
 
