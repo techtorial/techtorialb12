@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestNG OpenChart Runner">
+
+    <test name="OpenChart Tests">
+        <classes>
+               <class name="MentoringWithAhmet.com.test.openchart.tests.LoginTest"> </class>
+                <class name="MentoringWithAhmet.com.test.openchart.tests.MainTest"> </class>
+
+        </classes>
+    </test>
+
+</suite>
