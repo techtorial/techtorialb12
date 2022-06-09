@@ -4,33 +4,39 @@ import com.test.orangehrm.TestBase;
 import com.test.orangehrm.pages.LoginPage;
 import com.test.orangehrm.pages.MainPage;
 import com.test.orangehrm.pages.PimPage;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import utils.ConfigReader;
 
 public class PimTest extends TestBase {
 
+//    @Test
+//    public void validateThePI() throws InterruptedException {
+//        LoginPage loginPage=new LoginPage(driver);
+//        loginPage.sendInformation("Admin","admin123");
+//        MainPage mainPage=new MainPage(driver);
+//        mainPage.clickPim();
+//        PimPage pimPage=new PimPage(driver);
+//        pimPage.sendPi("Ahmet","Baldir","1991",
+//                "/Users/techtorial/Desktop/usa.png","AhmetIT3",
+//                "12345678","12345678","Disabled");
+//        pimPage.validationInformation("Ahmet","Baldir","1991");
+//    }
+    @Parameters({"firstName","lastName","employeeId","locationFile","userName","password","confirmPassword","status",
+            "statusMarriage","national","dateOfBirth","date"})
     @Test
-    public void validateThePI() throws InterruptedException {
+    public void validateEmployeeList(String firstName,String lastName,String employeeId
+    ,String locationFile,String userName,String password,String confirmPassword,String status, String statusMarriage,
+                                     String national,String dateOfBirth,String date) throws InterruptedException {
         LoginPage loginPage=new LoginPage(driver);
-        loginPage.sendInformation("Admin","admin123");
+        loginPage.sendInformation(ConfigReader.readProperty("orangehrmusername"),ConfigReader.readProperty("orangehrmpassword"));
         MainPage mainPage=new MainPage(driver);
         mainPage.clickPim();
         PimPage pimPage=new PimPage(driver);
-        pimPage.sendPi("Ahmet","Baldir","1991",
-                "/Users/techtorial/Desktop/usa.png","AhmetIT3",
-                "12345678","12345678","Disabled");
-        pimPage.validationInformation("Ahmet","Baldir","1991");
+        pimPage.sendPi(firstName,lastName,employeeId, locationFile,userName, password,confirmPassword,status);
+        pimPage.sendPersonalDetails(statusMarriage,national,dateOfBirth);
+        pimPage.validateAfterEdit(statusMarriage,national,date);
     }
-    @Test
-    public void validateEmployeeList() throws InterruptedException {
-        LoginPage loginPage=new LoginPage(driver);
-        loginPage.sendInformation("Admin","admin123");
-        MainPage mainPage=new MainPage(driver);
-        mainPage.clickPim();
-        PimPage pimPage=new PimPage(driver);
-        pimPage.sendPi("Ahmet","Baldir","1991",
-                "/Users/techtorial/Desktop/usa.png","AhmetIT349",
-                "12345678","12345678","Disabled");
-        pimPage.sendPersonalDetails("Single","Turkish","2022-06-11");
-        pimPage.validateAfterEdit("Single","Turkish","2022-06-11");
-    }
+
+
 }
