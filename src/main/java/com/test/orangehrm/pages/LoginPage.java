@@ -27,7 +27,6 @@ public class LoginPage {
     public void sendInformation(String username,String password) throws InterruptedException {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
-        Thread.sleep(3000);
         loginButton.click();
     }
 

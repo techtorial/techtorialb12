@@ -53,9 +53,8 @@ public class AdminPage {
         BrowserUtils.selectBy(status,statusName,"text");
         this.password.sendKeys(password);
         this.confirmPassword.sendKeys(confirmPassword);
-        Thread.sleep(1000);
         saveButton.click();
-        Thread.sleep(1000);
+
     }
 
     public boolean validationUserNameIsCreated(String userName){

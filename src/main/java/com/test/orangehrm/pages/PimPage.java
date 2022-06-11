@@ -85,9 +85,7 @@ public class PimPage {
         this.password.sendKeys(password);
         this.confirmPassword.sendKeys(confirmPassword);
         BrowserUtils.selectBy(status,Status,"text");
-        Thread.sleep(3000);
         saveButton.click();
-        Thread.sleep(3000);
     }
 
     public void validationInformation(String name,String lastName,String employeeId){
