@@ -39,4 +39,21 @@ public class PimTest extends TestBase {
     }
 
 
+
+
+    /*
+    1-Navigate to the website https://www.etsy.com/
+    2-take care of your testbase class
+    3-search iphone 13 case on the website
+    4-validate all of the headers from search includes either iphone, case, 13
+    5-Parameterize these iphone,case,13 and THE SEARCH PARAMETER(iphone 13 case)
+    Totally you should have 4 parameters which are coming from xml file.
+    Runner class.xml
+     */
+
+
+
+
+
+
 }
